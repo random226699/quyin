@@ -1,0 +1,42 @@
+#APP
+app:
+  http_port: 7800               #http 端口
+  static_dir: resources/static  #静态文件路径
+  db_driver: mysql              #数据库：mysql或sqlite
+
+jwt:
+  secret: 37cvMC4EXCgy0gF8  #秘钥
+  ttl: 2592000              #过期时间(秒)
+
+#zap日志库
+zap:
+  director: resources/logs      #日志文件存放目录
+  max_size: 10                  #文件大小限制,单位MB
+  max_backups: 15               #最大保留日志文件数量
+  max_age: 7                    #日志文件保留天数
+  compress: false               #是否压缩处理
+  console_output: true          #是否控制台输出
+
+
+#数据库(sqlite)
+sqlite:
+  base_path: resources/database       #数据库路径
+  common_db: qu-yin.db                #数据库
+  binlog: false                       #是否打印sql日志
+
+
+#数据库(mysql)
+mysql:
+  host: 127.0.0.1
+  port: 3306
+  username: root
+  password: 123456
+  database: quyin
+  binlog: false                       #是否打印sql日志
+
+#微信配置
+wechat:
+  mini_appid: wx12345677              #微信小程序APPID
+  mini_secret: xxx                    #微信小程序秘钥
+
+

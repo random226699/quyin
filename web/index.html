@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>趣印去水印</title>
+    <style>
+
+        body{
+            background-image: url("./static/images/bg.png");
+        }
+
+        .main-box{
+            padding: 40px 100px;
+        }
+
+        .left-box {
+            float: left;
+            width: 400px;
+            height: calc(100vh - 80px);
+        }
+        .right-box {
+            float: right;
+            width: calc(90% - 400px);
+            height: calc(100vh - 80px);
+        }
+        iframe{
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+        }
+        .information img{
+            height: 200px;
+            width: 200px
+        }
+        #full-screen{
+            margin-left: 26%;
+            margin-top: 20px;
+            font-size: 30px;
+            display: none;
+        }
+        a:link {text-decoration:none;}
+    </style>
+</head>
+<body>
+
+<div class="main-box" id="main-box">
+    <div class="left-box" id="left-box">
+        <iframe src="/h5"></iframe>
+        <div id="full-screen">
+            <a href="/h5" target="_blank">点击全屏使用</a>
+        </div>
+
+    </div>
+
+    <div class="right-box">
+        <div class="information">
+            <h2>功能介绍</h2>
+            <p>特点：全网唯一原画质无压缩去水印工具，支持国内外100多个短视频平台(抖音、快手、小红书、西瓜、皮皮等...)</p>
+            <p>平台：支持微信小程序、H5移动端、PC电脑端</p>
+            <p>付费：永久免费(微信小程序可接入流量主)</p>
+
+            <h2>开发架构</h2>
+            <p>前端：Vue + uni-app多端打包</p>
+            <p>后端：Golang + Gin + Mysql5.6</p>
+            <p>特点：无需搭建任何运行环境，双击可执行文件即可运行(Windows/Linux/Mac)</p>
+            <p>备注：可联系作者搭建同款项目</p>
+
+            <h2>项目体验</h2>
+            <div class="qrcode">
+                <img src="/web/static/images/qrcode.jpg" alt="微信扫一扫">
+<!--                <p>备注：小程序正在备案中，敬请期待</p>-->
+                <p>作者：隔壁小猿子</p>
+                <p>联系：coder6888(微信)</p>
+                <p>持续更新中...</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<script>
+    if (isMobile()) {
+       let mainBox =  document.getElementById("main-box");
+       mainBox.style.cssText = "padding: 50px 10px;margin-top: 5%;";
+       let leftBox = document.getElementById("left-box");
+       leftBox.style.cssText = "height: calc(50vh);";
+       let fullScreen = document.getElementById("full-screen");
+       fullScreen.style.cssText = "display: block;"
+    }
+
+    function isMobile() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+</script>
+
+
+
+</body>
+</html>
